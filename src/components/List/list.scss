@@ -6,7 +6,8 @@
   border: 1px solid $borderTaskColor;
   margin-bottom: .3em;
   padding: .6em;
-
+  display:flex;
+  
   &-label {
     margin-left: .5em;
   }
@@ -22,6 +23,7 @@
   margin: 0 .2em;
   vertical-align: middle;
   font-size: 1.5em;
+  
   &--on{
     color:#B0CB1D;
   }

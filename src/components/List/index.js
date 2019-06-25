@@ -10,7 +10,7 @@ import './list.scss';
 // 1- je récupère mes props (je destructure/j'extrais ce qui m'intéresse en même temps)
 // 2- je valide mes propps
 // 3- je les utilise
-const List = ({ tasks, changeTaskDone, changeTaskFav }) => (
+const List = ({ tasks, changeTaskDone, changeTaskFav, filterTask }) => (
   <ul id="todo-list">
     {/*
       exemple sans destructuration
@@ -31,7 +31,13 @@ const List = ({ tasks, changeTaskDone, changeTaskFav }) => (
         ça revient au même que d'écrire
         <Task key={task.id} id={1} label="toto" done={false} />
       */
-      <Task changeTaskDone={changeTaskDone} key={task.id} {...task} changeTaskFav={changeTaskFav} />
+      <Task changeTaskDone={changeTaskDone} 
+        key={task.id}
+        tasks={tasks}
+        {...task}
+        changeTaskFav={changeTaskFav}
+        filterTask={filterTask}
+      />
     ))}
   </ul>
 );
@@ -43,6 +49,8 @@ List.propTypes = {
     }),
   ).isRequired,
   changeTaskDone: PropTypes.func.isRequired,
+  changeTaskFav: PropTypes.func.isRequired,
+  filterTask: PropTypes.func.isRequired,
 };
 
 // == Export

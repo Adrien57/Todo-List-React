@@ -133,6 +133,15 @@ class App extends React.Component {
     });
   }
 
+  filterTask = (id) => {
+    const { tasks: oldTasks } = this.state;
+    const tasksToKeep = oldTasks.filter(task => task.id !== id);
+    console.log(tasksToKeep); 
+    this.setState({
+      tasks: tasksToKeep,
+    })
+  }
+
   // la valeur de retour du dumb component devient la méthode render de la classe
   render() {
     // on déstructure l'objet du state
@@ -147,7 +156,7 @@ class App extends React.Component {
           changeInputValue={this.changeInputValue}
         />
         <Counter count={count} />
-        <List changeTaskDone={this.changeTaskDone} tasks={tasks} changeTaskFav={this.changeTaskFav} />
+        <List changeTaskDone={this.changeTaskDone} tasks={tasks} changeTaskFav={this.changeTaskFav} filterTask={this.filterTask}/>
       </div>
     );
   }

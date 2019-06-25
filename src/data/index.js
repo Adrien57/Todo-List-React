@@ -13,7 +13,7 @@ export default [
   },
   {
     id: 4,
-    label: 'Dedicasser Gianni',
+    label: 'Manger des pates',
     done: false,
     fav: false,
   },
