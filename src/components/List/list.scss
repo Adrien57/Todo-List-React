@@ -1,0 +1,29 @@
+@import 'src/styles/vars';
+
+.task {
+  border-radius: .3em;
+  background-color: $taskBackgroundColor;
+  border: 1px solid $borderTaskColor;
+  margin-bottom: .3em;
+  padding: .6em;
+
+  &-label {
+    margin-left: .5em;
+  }
+  
+  &--done {
+    text-decoration: line-through;
+    opacity: .5;
+  }
+  
+}
+
+.fistar{
+  margin: 0 .2em;
+  vertical-align: middle;
+  font-size: 1.5em;
+  &--on{
+    color:#B0CB1D;
+  }
+}
+
